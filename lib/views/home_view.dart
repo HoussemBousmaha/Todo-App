@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:todo/models/db.dart';
 import '../models/todo.dart';
 import '../widgets/user_input.dart';
-import '../widgets/todo_card.dart';
 import '../widgets/todo_list.dart';
 
 class HomeView extends StatefulWidget {

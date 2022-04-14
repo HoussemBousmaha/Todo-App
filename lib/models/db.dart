@@ -33,8 +33,8 @@ class DatabaseConnect {
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         title TEXT,
         creationDate TEXT,
-        isChecked INTEGER,
-      )
+        isChecked INTEGER
+        )
     ''');
   }
 
@@ -46,7 +46,8 @@ class DatabaseConnect {
     await db.insert(
       'todo', // the name of our table.
       todo.toMap(), // the function we created in our todo model
-      conflictAlgorithm: ConflictAlgorithm.replace, // this will replace duplicate entries
+      conflictAlgorithm:
+          ConflictAlgorithm.replace, // this will replace duplicate entries
     );
   }
 
@@ -81,8 +82,10 @@ class DatabaseConnect {
       (index) => Todo(
         id: items[index]['id'],
         title: items[index]['title'],
-        creationDate: DateTime.parse(items[index]['creationDate']), // this is a String, let's convert it into a DataTime object.
-        isChecked: items[index]['isChecked'] == 1 ? true : false, // integer to bool
+        creationDate: DateTime.parse(items[index][
+            'creationDate']), // this is a String, let's convert it into a DataTime object.
+        isChecked:
+            items[index]['isChecked'] == 1 ? true : false, // integer to bool
       ),
     );
   }

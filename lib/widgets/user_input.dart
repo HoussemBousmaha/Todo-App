@@ -8,7 +8,7 @@ class UserInput extends StatelessWidget {
     required this.insertFunction,
   }) : super(key: key);
 
-  var textControoler = TextEditingController();
+  final textControoler = TextEditingController();
   final Function insertFunction;
 
   @override
